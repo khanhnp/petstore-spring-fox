@@ -1,0 +1,41 @@
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /api-docs
+server:
+  contextPath: /api
+  port: 8080
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+  jackson:
+    date-format: io.swagger.RFC3339DateFormat
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: 12345!Fra
+    platform: POSTGRESQL
+
+client:
+  a:
+    datasource:
+      url: jdbc:postgresql://localhost:5432/postgres
+  b:
+    datasource:
+      url: jdbc:postgresql://localhost:5432/petstore
+
+encrypt:
+  keyStore:
+    location: classpath:/server.jks
+    password: letmein
+    alias: mytestkey
+    secret: password
